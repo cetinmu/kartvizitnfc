@@ -2,90 +2,144 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Yalçın Yaşar – Dijital Kartvizit</title>
+  <title>Yalçın Yaşar – İletişim Bilgileri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-      background: #f2f2f7;
-      padding: 30px;
-      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #f2f2f7, #ffffff);
+      margin: 0;
+      padding: 40px 20px;
+      color: #1c1c1e;
     }
+
     .card {
       background: #ffffff;
-      border-radius: 18px;
-      padding: 24px;
       max-width: 420px;
       margin: auto;
-      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.12);
     }
-    h1 {
-      margin-bottom: 6px;
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
     }
-    p {
-      color: #555;
-      margin: 6px 0;
+
+    .header h1 {
+      font-size: 26px;
+      margin: 0;
     }
-    a.button {
-      display: block;
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 17px;
+
+    .header p {
+      margin: 6px 0 0;
       font-weight: 600;
+      color: #6b6b6f;
     }
-    .ios {
-      background: #000;
-      color: #fff;
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f6f6f8;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
     }
-    .android {
-      background: #3ddc84;
-      color: #000;
+
+    .item .info {
+      text-align: left;
+    }
+
+    .label {
+      font-size: 12px;
+      color: #8e8e93;
+      margin-bottom: 2px;
+    }
+
+    .value {
+      font-size: 15px;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    button.copy {
+      border: none;
+      background: #007aff;
+      color: white;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button.copy:active {
+      transform: scale(0.95);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #8e8e93;
     }
   </style>
 
   <script>
-    function detectOS() {
-      const ua = navigator.userAgent || navigator.vendor || window.opera;
-      if (/iPad|iPhone|iPod/.test(ua)) {
-        document.getElementById("ios-btn").style.display = "block";
-      } else if (/Android/.test(ua)) {
-        document.getElementById("android-btn").style.display = "block";
-      } else {
-        document.getElementById("ios-btn").style.display = "block";
-        document.getElementById("android-btn").style.display = "block";
-      }
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Kopyalandı 👍");
+      });
     }
   </script>
 </head>
 
-<body onload="detectOS()">
+<body>
 
-<div class="card">
-  <h1>Yalçın Yaşar</h1>
-  <p>Yay Enerji Grubu</p>
-  <p>📞 0542 601 69 21</p>
-  <p>✉️ yayenerjigrubu@gmail.com</p>
-  <p>📍 Sakarya</p>
+  <div class="card">
 
-  <!-- iPHONE -->
-  <a id="ios-btn"
-     class="button ios"
-     href="https://www.icloud.com/shortcuts/XXXXXXXX"
-     style="display:none;">
-     🍎 iPhone – Kişilere Ekle
-  </a>
+    <div class="header">
+      <h1>Yalçın Yaşar</h1>
+      <p>Yay Enerji Grubu</p>
+    </div>
 
-  <!-- ANDROID -->
-  <a id="android-btn"
-     class="button android"
-     href="https://example.com/kisi.vcf"
-     style="display:none;">
-     🤖 Android – Kişilere Ekle
-  </a>
-</div>
+    <div class="item">
+      <div class="info">
+        <div class="label">Telefon</div>
+        <div class="value">0542 601 69 21</div>
+      </div>
+      <button class="copy" onclick="copyText('05426016921')">Kopyala</button>
+    </div>
+
+    <div class="item">
+      <div class="info">
+        <div class="label">E-posta</div>
+        <div class="value">yayenerjigrubu@gmail.com</div>
+      </div>
+      <button class="copy" onclick="copyText('yayenerjigrubu@gmail.com')">Kopyala</button>
+    </div>
+
+    <div class="item">
+      <div class="info">
+        <div class="label">Adres</div>
+        <div class="value">
+          Maltepe Mah. Orhangazi Cad. No:44/B<br>
+          Adapazarı / Sakarya
+        </div>
+      </div>
+      <button class="copy" onclick="copyText('Maltepe Mah. Orhangazi Cad. No:44/B Adapazarı Sakarya')">
+        Kopyala
+      </button>
+    </div>
+
+    <div class="footer">
+      Bilgileri kopyalayarak dilediğiniz uygulamada kullanabilirsiniz.
+    </div>
+
+  </div>
 
 </body>
 </html>
