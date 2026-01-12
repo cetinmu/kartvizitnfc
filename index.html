@@ -1,145 +1,155 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Yalçın Yaşar – İletişim Bilgileri</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: linear-gradient(180deg, #f2f2f7, #ffffff);
-      margin: 0;
-      padding: 40px 20px;
-      color: #1c1c1e;
-    }
-
-    .card {
-      background: #ffffff;
-      max-width: 420px;
-      margin: auto;
-      border-radius: 22px;
-      padding: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,.12);
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .header h1 {
-      font-size: 26px;
-      margin: 0;
-    }
-
-    .header p {
-      margin: 6px 0 0;
-      font-weight: 600;
-      color: #6b6b6f;
-    }
-
-    .item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #f6f6f8;
-      border-radius: 14px;
-      padding: 14px 16px;
-      margin-bottom: 14px;
-    }
-
-    .item .info {
-      text-align: left;
-    }
-
-    .label {
-      font-size: 12px;
-      color: #8e8e93;
-      margin-bottom: 2px;
-    }
-
-    .value {
-      font-size: 15px;
-      font-weight: 600;
-      word-break: break-word;
-    }
-
-    button.copy {
-      border: none;
-      background: #007aff;
-      color: white;
-      border-radius: 10px;
-      padding: 8px 12px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    button.copy:active {
-      transform: scale(0.95);
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 12px;
-      color: #8e8e93;
-    }
-  </style>
-
-  <script>
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Kopyalandı 👍");
-      });
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yalçın YAŞAR - Dijital Kartvizit</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #fff;
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            width: 400px;
+            color: #212529;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .header {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+            color: #007bff;
+        }
+        .title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #495057;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            color: #343a40;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        .label {
+            font-weight: 600;
+            color: #495057;
+            flex: 1;
+            cursor: default;
+        }
+        .value {
+            flex: 2;
+            color: #212529;
+            user-select: text;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-right: 15px;
+        }
+        button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+        .message {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #28a745;
+            height: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
 </head>
-
 <body>
-
-  <div class="card">
-
-    <div class="header">
-      <h1>Yalçın Yaşar</h1>
-      <p>Yay Enerji Grubu</p>
-    </div>
-
-    <div class="item">
-      <div class="info">
-        <div class="label">Telefon</div>
-        <div class="value">0542 601 69 21</div>
-      </div>
-      <button class="copy" onclick="copyText('05426016921')">Kopyala</button>
-    </div>
-
-    <div class="item">
-      <div class="info">
-        <div class="label">E-posta</div>
-        <div class="value">yayenerjigrubu@gmail.com</div>
-      </div>
-      <button class="copy" onclick="copyText('yayenerjigrubu@gmail.com')">Kopyala</button>
-    </div>
-
-    <div class="item">
-      <div class="info">
-        <div class="label">Adres</div>
-        <div class="value">
-          Maltepe Mah. Orhangazi Cad. No:44/B<br>
-          Adapazarı / Sakarya
+    <div class="card">
+        <div class="header">
+            <h1 class="name">Yalçın YAŞAR</h1>
+            <div class="title">Genel Müdür</div>
         </div>
-      </div>
-      <button class="copy" onclick="copyText('Maltepe Mah. Orhangazi Cad. No:44/B Adapazarı Sakarya')">
-        Kopyala
-      </button>
+        <div class="info-item">
+            <div class="label">📞 Numara</div>
+            <div class="value" id="phone">0542 601 69 21</div>
+            <button onclick="copyToClipboard('phone')" title="Numarayı kopyala">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                Kopyala
+            </button>
+        </div>
+        <div class="info-item">
+            <div class="label">✉️ Mail 1</div>
+            <div class="value" id="mail1">yayenerji@gmail.com</div>
+            <button onclick="copyToClipboard('mail1')" title="Mail adresini kopyala">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                Kopyala
+            </button>
+        </div>
+        <div class="info-item">
+            <div class="label">✉️ Mail 2</div>
+            <div class="value" id="mail2">Yayenerjigrubu@gmail.com</div>
+            <button onclick="copyToClipboard('mail2')" title="Mail adresini kopyala">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                Kopyala
+            </button>
+        </div>
+        <div class="info-item">
+            <div class="label">📍 Adres</div>
+            <div class="value" id="address">Maltepe Mah. Orhangazi Cad. No44/B Adapazarı/Sakarya</div>
+            <button onclick="copyToClipboard('address')" title="Adresi kopyala">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                Kopyala
+            </button>
+        </div>
+        <div class="message" id="message"></div>
     </div>
 
-    <div class="footer">
-      Bilgileri kopyalayarak dilediğiniz uygulamada kullanabilirsiniz.
-    </div>
-
-  </div>
-
+    <script>
+        function copyToClipboard(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const message = document.getElementById('message');
+                message.innerText = 'Kopyalandı: ' + text;
+                setTimeout(() => { message.innerText = ''; }, 2500);
+            }).catch(err => {
+                alert('Kopyalama başarısız: ' + err);
+            });
+        }
+    </script>
 </body>
 </html>
