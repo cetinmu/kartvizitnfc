@@ -4,36 +4,64 @@
   <meta charset="UTF-8">
   <title>Yalçın Yaşar – Dijital Kartvizit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, Arial;
-      background: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      background: #f2f2f7;
       padding: 30px;
       text-align: center;
     }
     .card {
-      background: #fff;
-      border-radius: 16px;
+      background: #ffffff;
+      border-radius: 18px;
       padding: 24px;
-      max-width: 400px;
+      max-width: 420px;
       margin: auto;
-      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
     }
-    h1 { margin-bottom: 5px; }
-    p { color: #555; }
+    h1 {
+      margin-bottom: 6px;
+    }
+    p {
+      color: #555;
+      margin: 6px 0;
+    }
     a.button {
       display: block;
-      margin-top: 20px;
+      margin-top: 18px;
       padding: 14px;
-      background: #007AFF;
-      color: #fff;
+      border-radius: 12px;
       text-decoration: none;
-      border-radius: 10px;
-      font-size: 18px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .ios {
+      background: #000;
+      color: #fff;
+    }
+    .android {
+      background: #3ddc84;
+      color: #000;
     }
   </style>
+
+  <script>
+    function detectOS() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      if (/iPad|iPhone|iPod/.test(ua)) {
+        document.getElementById("ios-btn").style.display = "block";
+      } else if (/Android/.test(ua)) {
+        document.getElementById("android-btn").style.display = "block";
+      } else {
+        document.getElementById("ios-btn").style.display = "block";
+        document.getElementById("android-btn").style.display = "block";
+      }
+    }
+  </script>
 </head>
-<body>
+
+<body onload="detectOS()">
 
 <div class="card">
   <h1>Yalçın Yaşar</h1>
@@ -42,9 +70,20 @@
   <p>✉️ yayenerjigrubu@gmail.com</p>
   <p>📍 Sakarya</p>
 
-  <a class="button"
-     href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AN:Ya%C5%9Far;Yal%C3%A7%C4%B1n%0AFN:Yal%C3%A7%C4%B1n%20Ya%C5%9Far%0ATEL;TYPE=CELL:+905426016921%0AEMAIL:yayenerjigrubu@gmail.com%0AADR:;;Maltepe%20Mah%20Orhangazi%20Cad.%20No:44/B;Adapazar%C4%B1;Sakarya;;%0AEND:VCARD">
-     📇 Kişilere Ekle
+  <!-- iPHONE -->
+  <a id="ios-btn"
+     class="button ios"
+     href="https://www.icloud.com/shortcuts/XXXXXXXX"
+     style="display:none;">
+     🍎 iPhone – Kişilere Ekle
+  </a>
+
+  <!-- ANDROID -->
+  <a id="android-btn"
+     class="button android"
+     href="https://example.com/kisi.vcf"
+     style="display:none;">
+     🤖 Android – Kişilere Ekle
   </a>
 </div>
 
